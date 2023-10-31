@@ -75,6 +75,15 @@ func (i *IP) lookup(ip net.IP, off, max, size int64, len int) (country string) {
 				break
 			}
 			off += size
+			if len == 16 {
+				if data[0] != ip.To16()[0] {
+					continue
+				}
+			} else if len == 4 {
+				if data[0] != ip.To4()[0] {
+					continue
+				}
+			}
 			_, i2, err := net.ParseCIDR(fmt.Sprintf("%s/%d", net.IP(data[:len]), data[len]))
 			if err != nil {
 				break

@@ -35,7 +35,9 @@ func (i *IP) init() {
 func (i *IP) Version() int64 {
 	return i.version
 }
-
+func (i *IP) CountryCN(ip net.IP) bool {
+	return i.Country(ip) == "CN"
+}
 func (i *IP) Country(ip net.IP) string {
 	if ip.To4() != nil {
 		return i.country4(ip)

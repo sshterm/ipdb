@@ -1,4 +1,4 @@
-package db
+package cndb
 
 import (
 	"github.com/sshterm/ipdb/db/ip"

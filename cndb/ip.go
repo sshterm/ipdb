@@ -1,7 +1,7 @@
 package cndb
 
 import (
-	"github.com/sshterm/ipdb/db/ip"
+	"github.com/sshterm/ipdb/ip"
 	_ "embed"
 )
 

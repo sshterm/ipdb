@@ -20,3 +20,22 @@ func main() {
 }
 
 ```
+```go
+package main
+
+import (
+	"github.com/sshterm/ipdb/cndb"
+	"log"
+	"net"
+)
+
+func main() {
+	data := cndb.NewIP()
+	log.Println(data.Version())
+	log.Println(data.CountryCN(net.ParseIP("1.1.1.1")))                             //false
+	log.Println(data.CountryCN(net.ParseIP("8.8.8.8")))                             //false
+	log.Println(data.CountryCN(net.ParseIP("120.231.109.110")))                     //true
+	log.Println(data.CountryCN(net.ParseIP("2409:8a55:f2fb:ff2:42:c0ff:fea8:a0a"))) //true
+}
+
+```
